@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>jQuery Ajax</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+<script type="text/javascript">
+    (function(window, document, $) {
+        $(document).ready(function() {
+            $.ajax("./data/exampleSource.json")
+                .done(function (data, textStatus, jqXHR) {
+                    alert("success: " + JSON.stringify(data));
+                })
+                .fail(function (jqXHR, textStatus, errorThrown) {
+                    alert("error: " + errorThrown);
+                })
+                .always(function() {
+                    alert("complete");
+                });
+        });
+    }(window, window.document, window.jQuery));
+</script>
+</body>
+</html>
