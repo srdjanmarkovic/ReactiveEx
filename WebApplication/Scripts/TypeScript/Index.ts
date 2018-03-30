@@ -7,11 +7,14 @@ import 'rxjs/add/observable/empty';
 import 'rxjs/add/observable/concat';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/observable/range';
+import 'rxjs/add/observable/interval';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/concat';
 import 'rxjs/add/operator/every';
+import 'rxjs/add/operator/take';
+import 'rxjs/add/operator/toArray';
 
 var array = [10, 20, 30];
 var result = Observable.from(array);
@@ -93,3 +96,8 @@ subscription = source
 
 // Later:
 subscription.unsubscribe();
+
+const input = Observable.interval(100).take(4);
+
+input.toArray()
+    .subscribe(arr => console.log(arr)); // [0,1,2,3]
