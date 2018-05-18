@@ -10,9 +10,11 @@
     (function(window, document, $) {
         $(document).ready(function() {
             $.ajax("./data/exampleSource.json")
+// ReSharper disable once UnusedParameter
                 .done(function (data, textStatus, jqXHR) {
                     alert("success: " + JSON.stringify(data));
                 })
+// ReSharper disable once InconsistentNaming
                 .fail(function (jqXHR, textStatus, errorThrown) {
                     alert("error: " + errorThrown);
                 })

@@ -1,5 +1,5 @@
 {
-  "name": "webapplication",
+  "name": "web-application",
   "version": "1.0.0",
   "description": "sample app",
   "main": "index.js",
